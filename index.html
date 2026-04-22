@@ -1,556 +1,640 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BRAND — أحذية لكل خطوة</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;700&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRAND — أحذية لكل خطوة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Inter:wght@400;500;700&family=Pacifico&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
 
-<!-- ANNOUNCE -->
-<div id="announce">
-  خصم ٣٠٪ على طلبك عند الشراء بأكثر من ٨٠٠ ج.م &nbsp;·&nbsp; شحن مجاني على جميع الطلبات داخل مصر
-  <button id="announce-close" onclick="this.parentElement.remove()">×</button>
-</div>
-
-<!-- NAVBAR -->
-<div id="navbar-wrap">
-<header id="navbar">
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">brand</a>
-
-    <div class="nav-center">
-      <ul class="nav-main-links">
-        <li><a href="#products">رجالي</a></li>
-        <li><a href="#products">نسائي</a></li>
-        <li><a href="#offer-band">تخفيضات</a></li>
-      </ul>
-    </div>
-
-    <div class="nav-right">
-      <ul class="nav-secondary-links">
-        <li><a href="#about">من نحن</a></li>
-        <li><a href="#">ReRun</a></li>
-      </ul>
-      <div class="nav-icon-group">
-        <button class="nav-btn" title="بحث">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-        </button>
-        <button class="nav-btn" title="حسابي">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </button>
-        <button class="nav-btn" title="مساعدة">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        </button>
-      </div>
-      <div class="cart-btn-wrap">
-        <button class="nav-btn" id="cart-btn" title="السلة">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
-          <span class="cart-count" id="cart-count" style="display:none">0</span>
-        </button>
-      </div>
-      <button class="hamburger" id="hamburger-btn" title="القائمة">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-  <div class="nav-banner">
-    <h2 class="nav-banner-title">خصم ٣٠٪ على طلبك عند الشراء بأكثر من ٨٠٠ ج.م</h2>
-    <p class="nav-banner-subtitle">يُطبق الخصم تلقائياً عند الدفع.</p>
-  </div>
-</header>
-</div>
-
-<!-- MOBILE MENU -->
-<div id="mobile-menu">
-  <button class="mobile-close" id="mobile-close">×</button>
-  <ul class="mobile-links">
-    <li><a href="#products" onclick="closeMobile()">رجالي</a></li>
-    <li><a href="#products" onclick="closeMobile()">نسائي</a></li>
-    <li><a href="#products" onclick="closeMobile()">أطفال</a></li>
-    <li><a href="#products" onclick="closeMobile()">الجديد</a></li>
-    <li><a href="#offer-band" onclick="closeMobile()">تخفيضات</a></li>
-    <li><a href="#about" onclick="closeMobile()">من نحن</a></li>
-    <li><a href="#testimonials" onclick="closeMobile()">آراء العملاء</a></li>
-  </ul>
-</div>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-text-panel reveal">
-    <p class="hero-eyebrow">كولكشن ٢٠٢٥</p>
-    <h1 class="hero-h1">كل خطوة<br>تحكاية</h1>
-    <p class="hero-sub">أحذية لكل المناسبات — مريحة، عصرية، وبجودة استثنائية للشباب والعائلة.</p>
-    <div class="hero-btns">
-      <a href="#products" class="btn-black">تسوق الآن</a>
-      <button class="btn-outline" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">اكتشف المجموعة</button>
-    </div>
-    <div class="hero-trust">
-      <span class="trust-pill">شحن مجاني</span>
-      <span class="trust-pill">إرجاع ٣٠ يوم</span>
-      <span class="trust-pill">ضمان سنة كاملة</span>
-    </div>
-  </div>
-  <div class="hero-img-panel">
-    <img src="https://placehold.co/500x500/EFEFED/333333?text=👟+BRAND" alt="حذاء BRAND الرياضي الجديد">
-    <span class="hero-img-label">New Drop 2025</span>
-  </div>
-</section>
-
-<!-- TRUST BAR -->
-<div id="trust-bar" class="reveal">
-  <div class="trust-item">
-    <div class="trust-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-    </div>
-    <div>
-      <div class="trust-title">راحة استثنائية</div>
-      <div class="trust-desc">نعل مبطن بتقنية إسفنج متطورة</div>
-    </div>
-  </div>
-  <div class="trust-item">
-    <div class="trust-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v4h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-    </div>
-    <div>
-      <div class="trust-title">توصيل خلال ٤٨ ساعة</div>
-      <div class="trust-desc">لجميع أنحاء مصر والخليج العربي</div>
-    </div>
-  </div>
-  <div class="trust-item">
-    <div class="trust-icon">
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-    </div>
-    <div>
-      <div class="trust-title">إرجاع مجاني ٣٠ يوم</div>
-      <div class="trust-desc">ما عجبكش؟ نرجعهولك بدون أسئلة</div>
-    </div>
-  </div>
-</div>
-
-<!-- CATEGORIES SECTION -->
-<section id="categories">
-  <div class="cats-grid reveal">
-    <!-- 1: blue | وصلنا جديد -->
-    <div class="cat-card" data-href="#products">
-      <img class="cat-img" src="assets/blue_sneaker.png" alt="وصلنا جديد">
-      <div class="cat-overlay"><span class="cat-label-pill">وصلنا جديد</span></div>
-    </div>
-    <!-- 2: dark grey | رجالي -->
-    <div class="cat-card" data-href="#products">
-      <img class="cat-img" src="assets/grey_sneaker.png" alt="رجالي">
-      <div class="cat-overlay"><span class="cat-label-pill">رجالي</span></div>
-    </div>
-    <!-- 3: pink | نسائي -->
-    <div class="cat-card" data-href="#products">
-      <img class="cat-img" src="assets/pink_shoe.png" alt="نسائي">
-      <div class="cat-overlay"><span class="cat-label-pill">نسائي</span></div>
-    </div>
-    <!-- 4: green | الأكثر مبيعاً -->
-    <div class="cat-card" data-href="#products">
-      <img class="cat-img" src="assets/green_sneaker.png" alt="الأكثر مبيعاً">
-      <div class="cat-overlay"><span class="cat-label-pill">الأكثر مبيعاً</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- PRODUCTS -->
-<section id="products">
-  <div class="section-header reveal">
-    <div>
-      <p class="section-eyebrow">الكولكشن</p>
-      <h2 class="section-title">أحدث المجموعات</h2>
-    </div>
-    <a href="#" class="view-all">عرض الكل ←</a>
+  <!-- ANNOUNCE -->
+  <div id="announce">
+    خصم ٣٠٪ على طلبك عند الشراء بأكثر من ٨٠٠ ج.م &nbsp;·&nbsp; شحن مجاني على جميع الطلبات داخل مصر
+    <button id="announce-close" onclick="this.parentElement.remove()">×</button>
   </div>
 
-  <div class="filter-tabs reveal">
-    <button class="filter-tab active" data-cat="all">الكل</button>
-    <button class="filter-tab" data-cat="sport">رياضي</button>
-    <button class="filter-tab" data-cat="casual">كاجوال</button>
-    <button class="filter-tab" data-cat="formal">رسمي</button>
-    <button class="filter-tab" data-cat="kids">أطفال</button>
-    <button class="filter-tab" data-cat="women">نسائي</button>
-  </div>
+  <!-- NAVBAR -->
+  <div id="navbar-wrap">
+    <header id="navbar">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">brand</a>
 
-  <div class="products-grid" id="products-grid">
-
-    <div class="pcard reveal" data-category="sport">
-      <div class="pcard-img-wrap">
-        <span class="badge">جديد</span>
-        <img src="https://placehold.co/500x500/1a1a1a/ffffff?text=Sport+01" alt="حذاء رياضي كلاسيك">
-        <button class="add-to-cart-bar" onclick="addToCart('رياضي كلاسيك', '١٢٠٠ ج.م', this)">+ أضف للسلة</button>
-      </div>
-      <div class="pcard-info">
-        <div class="pcard-name">رياضي كلاسيك</div>
-        <div class="pcard-meta">
-          <div class="color-dots">
-            <div class="color-dot" style="background:#1a1a1a"></div>
-            <div class="color-dot" style="background:#e0e0e0"></div>
-            <div class="color-dot" style="background:#4a90d9"></div>
-          </div>
-          <span class="pcard-colors">٣ ألوان</span>
+        <div class="nav-center">
+          <ul class="nav-main-links">
+            <li><a href="#products">رجالي</a></li>
+            <li><a href="#products">نسائي</a></li>
+            <li><a href="#offer-band">تخفيضات</a></li>
+          </ul>
         </div>
-        <div class="pcard-price">1,200 ج.م</div>
-      </div>
-    </div>
 
-    <div class="pcard reveal" data-category="casual">
-      <div class="pcard-img-wrap">
-        <img src="https://placehold.co/500x500/888888/ffffff?text=Casual+02" alt="حذاء كاجوال يومي">
-        <button class="add-to-cart-bar" onclick="addToCart('كاجوال يومي', '٩٨٠ ج.م', this)">+ أضف للسلة</button>
-      </div>
-      <div class="pcard-info">
-        <div class="pcard-name">كاجوال يومي</div>
-        <div class="pcard-meta">
-          <div class="color-dots">
-            <div class="color-dot" style="background:#888"></div>
-            <div class="color-dot" style="background:#c8b89a"></div>
-            <div class="color-dot" style="background:#5a5a5a"></div>
-            <div class="color-dot" style="background:#2a4a3a"></div>
+        <div class="nav-right">
+          <ul class="nav-secondary-links">
+            <li><a href="#about">من نحن</a></li>
+            <li><a href="#">ReRun</a></li>
+          </ul>
+          <div class="nav-icon-group">
+            <button class="nav-btn" title="بحث">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+            </button>
+            <button class="nav-btn" title="حسابي">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </button>
+            <button class="nav-btn" title="مساعدة">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+            </button>
           </div>
-          <span class="pcard-colors">٦ ألوان</span>
+          <div class="cart-btn-wrap">
+            <button class="nav-btn" id="cart-btn" title="السلة">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <path d="M16 10a4 4 0 01-8 0" />
+              </svg>
+              <span class="cart-count" id="cart-count" style="display:none">0</span>
+            </button>
+          </div>
+          <button class="hamburger" id="hamburger-btn" title="القائمة">
+            <span></span><span></span><span></span>
+          </button>
         </div>
-        <div class="pcard-price">980 ج.م</div>
+      </div>
+      <div class="nav-banner">
+        <h2 class="nav-banner-title">خصم ٣٠٪ على طلبك عند الشراء بأكثر من ٨٠٠ ج.م</h2>
+        <p class="nav-banner-subtitle">يُطبق الخصم تلقائياً عند الدفع.</p>
+      </div>
+    </header>
+  </div>
+
+  <!-- MOBILE MENU -->
+  <div id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">×</button>
+    <ul class="mobile-links">
+      <li><a href="#products" onclick="closeMobile()">رجالي</a></li>
+      <li><a href="#products" onclick="closeMobile()">نسائي</a></li>
+      <li><a href="#products" onclick="closeMobile()">أطفال</a></li>
+      <li><a href="#products" onclick="closeMobile()">الجديد</a></li>
+      <li><a href="#offer-band" onclick="closeMobile()">تخفيضات</a></li>
+      <li><a href="#about" onclick="closeMobile()">من نحن</a></li>
+      <li><a href="#testimonials" onclick="closeMobile()">آراء العملاء</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-text-panel reveal">
+      <p class="hero-eyebrow">كولكشن ٢٠٢٥</p>
+      <h1 class="hero-h1">كل خطوة<br>تحكاية</h1>
+      <p class="hero-sub">أحذية لكل المناسبات — مريحة، عصرية، وبجودة استثنائية للشباب والعائلة.</p>
+      <div class="hero-btns">
+        <a href="#products" class="btn-black">تسوق الآن</a>
+        <button class="btn-outline"
+          onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">اكتشف المجموعة</button>
+      </div>
+      <div class="hero-trust">
+        <span class="trust-pill">شحن مجاني</span>
+        <span class="trust-pill">إرجاع ٣٠ يوم</span>
+        <span class="trust-pill">ضمان سنة كاملة</span>
       </div>
     </div>
+    <div class="hero-img-panel">
+      <img src="https://placehold.co/500x500/EFEFED/333333?text=👟+BRAND" alt="حذاء BRAND الرياضي الجديد">
+      <span class="hero-img-label">New Drop 2025</span>
+    </div>
+  </section>
 
-    <div class="pcard reveal" data-category="formal">
-      <div class="pcard-img-wrap">
-        <span class="badge">الأكثر مبيعاً</span>
-        <img src="https://placehold.co/500x500/2a2a2a/ffffff?text=Formal+03" alt="حذاء فورمال أنيق">
-        <button class="add-to-cart-bar" onclick="addToCart('فورمال أنيق', '١٤٥٠ ج.م', this)">+ أضف للسلة</button>
+  <!-- TRUST BAR -->
+  <div id="trust-bar" class="reveal">
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+        </svg>
       </div>
-      <div class="pcard-info">
-        <div class="pcard-name">فورمال أنيق</div>
-        <div class="pcard-meta">
-          <div class="color-dots">
-            <div class="color-dot" style="background:#1a1a1a"></div>
-            <div class="color-dot" style="background:#6b4c3b"></div>
-          </div>
-          <span class="pcard-colors">٢ ألوان</span>
+      <div>
+        <div class="trust-title">راحة استثنائية</div>
+        <div class="trust-desc">نعل مبطن بتقنية إسفنج متطورة</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="1" y="3" width="15" height="13" rx="1" />
+          <path d="M16 8h4l3 3v4h-7V8z" />
+          <circle cx="5.5" cy="18.5" r="2.5" />
+          <circle cx="18.5" cy="18.5" r="2.5" />
+        </svg>
+      </div>
+      <div>
+        <div class="trust-title">توصيل خلال ٤٨ ساعة</div>
+        <div class="trust-desc">لجميع أنحاء مصر والخليج العربي</div>
+      </div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path
+            d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z" />
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+          <line x1="12" y1="22.08" x2="12" y2="12" />
+        </svg>
+      </div>
+      <div>
+        <div class="trust-title">إرجاع مجاني ٣٠ يوم</div>
+        <div class="trust-desc">ما عجبكش؟ نرجعهولك بدون أسئلة</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORIES SECTION -->
+  <section id="categories">
+    <div class="cats-grid reveal">
+      <!-- 1: blue | وصلنا جديد -->
+      <div class="cat-card" data-href="#products">
+        <img class="cat-img" src="assets/blue_sneaker-removebg-preview.png" alt="وصلنا جديد">
+        <div class="cat-overlay"><span class="cat-label-pill">وصلنا جديد</span></div>
+      </div>
+      <!-- 2: dark grey | رجالي -->
+      <div class="cat-card" data-href="#products">
+        <img class="cat-img" src="assets/grey_sneaker-removebg-preview.png" alt="رجالي">
+        <div class="cat-overlay"><span class="cat-label-pill">رجالي</span></div>
+      </div>
+      <!-- 3: pink | نسائي -->
+      <div class="cat-card" data-href="#products">
+        <img class="cat-img" src="assets/pink_shoe-removebg-preview.png" alt="نسائي">
+        <div class="cat-overlay"><span class="cat-label-pill">نسائي</span></div>
+      </div>
+      <!-- 4: green | الأكثر مبيعاً -->
+      <div class="cat-card" data-href="#products">
+        <img class="cat-img" src="assets/green_sneaker-removebg-preview.png" alt="الأكثر مبيعاً">
+        <div class="cat-overlay"><span class="cat-label-pill">الأكثر مبيعاً</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-eyebrow">الكولكشن</p>
+        <h2 class="section-title">أحدث المجموعات</h2>
+      </div>
+      <a href="#" class="view-all">عرض الكل ←</a>
+    </div>
+
+    <div class="filter-tabs reveal">
+      <button class="filter-tab active" data-cat="all">الكل</button>
+      <button class="filter-tab" data-cat="sport">رياضي</button>
+      <button class="filter-tab" data-cat="casual">كاجوال</button>
+      <button class="filter-tab" data-cat="formal">رسمي</button>
+      <button class="filter-tab" data-cat="kids">أطفال</button>
+      <button class="filter-tab" data-cat="women">نسائي</button>
+    </div>
+
+    <div class="products-grid" id="products-grid">
+
+      <div class="pcard reveal" data-category="sport">
+        <div class="pcard-img-wrap">
+          <span class="badge">جديد</span>
+          <img src="https://placehold.co/500x500/1a1a1a/ffffff?text=Sport+01" alt="حذاء رياضي كلاسيك">
+          <button class="add-to-cart-bar" onclick="addToCart('رياضي كلاسيك', '١٢٠٠ ج.م', this)">+ أضف للسلة</button>
         </div>
-        <div class="pcard-price">1,450 ج.م</div>
-      </div>
-    </div>
-
-    <div class="pcard reveal" data-category="kids">
-      <div class="pcard-img-wrap">
-        <img src="https://placehold.co/500x500/f0a500/ffffff?text=Kids+04" alt="حذاء أطفال مريح">
-        <button class="add-to-cart-bar" onclick="addToCart('ستايل أطفال', '٧٥٠ ج.م', this)">+ أضف للسلة</button>
-      </div>
-      <div class="pcard-info">
-        <div class="pcard-name">ستايل أطفال</div>
-        <div class="pcard-meta">
-          <div class="color-dots">
-            <div class="color-dot" style="background:#f0a500"></div>
-            <div class="color-dot" style="background:#e05a5a"></div>
-            <div class="color-dot" style="background:#5a9ae0"></div>
-            <div class="color-dot" style="background:#5ae09a"></div>
+        <div class="pcard-info">
+          <div class="pcard-name">رياضي كلاسيك</div>
+          <div class="pcard-meta">
+            <div class="color-dots">
+              <div class="color-dot" style="background:#1a1a1a"></div>
+              <div class="color-dot" style="background:#e0e0e0"></div>
+              <div class="color-dot" style="background:#4a90d9"></div>
+            </div>
+            <span class="pcard-colors">٣ ألوان</span>
           </div>
-          <span class="pcard-colors">٥ ألوان</span>
+          <div class="pcard-price">1,200 ج.م</div>
         </div>
-        <div class="pcard-price">750 ج.م</div>
+      </div>
+
+      <div class="pcard reveal" data-category="casual">
+        <div class="pcard-img-wrap">
+          <img src="https://placehold.co/500x500/888888/ffffff?text=Casual+02" alt="حذاء كاجوال يومي">
+          <button class="add-to-cart-bar" onclick="addToCart('كاجوال يومي', '٩٨٠ ج.م', this)">+ أضف للسلة</button>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">كاجوال يومي</div>
+          <div class="pcard-meta">
+            <div class="color-dots">
+              <div class="color-dot" style="background:#888"></div>
+              <div class="color-dot" style="background:#c8b89a"></div>
+              <div class="color-dot" style="background:#5a5a5a"></div>
+              <div class="color-dot" style="background:#2a4a3a"></div>
+            </div>
+            <span class="pcard-colors">٦ ألوان</span>
+          </div>
+          <div class="pcard-price">980 ج.م</div>
+        </div>
+      </div>
+
+      <div class="pcard reveal" data-category="formal">
+        <div class="pcard-img-wrap">
+          <span class="badge">الأكثر مبيعاً</span>
+          <img src="https://placehold.co/500x500/2a2a2a/ffffff?text=Formal+03" alt="حذاء فورمال أنيق">
+          <button class="add-to-cart-bar" onclick="addToCart('فورمال أنيق', '١٤٥٠ ج.م', this)">+ أضف للسلة</button>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">فورمال أنيق</div>
+          <div class="pcard-meta">
+            <div class="color-dots">
+              <div class="color-dot" style="background:#1a1a1a"></div>
+              <div class="color-dot" style="background:#6b4c3b"></div>
+            </div>
+            <span class="pcard-colors">٢ ألوان</span>
+          </div>
+          <div class="pcard-price">1,450 ج.م</div>
+        </div>
+      </div>
+
+      <div class="pcard reveal" data-category="kids">
+        <div class="pcard-img-wrap">
+          <img src="https://placehold.co/500x500/f0a500/ffffff?text=Kids+04" alt="حذاء أطفال مريح">
+          <button class="add-to-cart-bar" onclick="addToCart('ستايل أطفال', '٧٥٠ ج.م', this)">+ أضف للسلة</button>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">ستايل أطفال</div>
+          <div class="pcard-meta">
+            <div class="color-dots">
+              <div class="color-dot" style="background:#f0a500"></div>
+              <div class="color-dot" style="background:#e05a5a"></div>
+              <div class="color-dot" style="background:#5a9ae0"></div>
+              <div class="color-dot" style="background:#5ae09a"></div>
+            </div>
+            <span class="pcard-colors">٥ ألوان</span>
+          </div>
+          <div class="pcard-price">750 ج.م</div>
+        </div>
+      </div>
+
+      <div class="pcard reveal" data-category="women">
+        <div class="pcard-img-wrap">
+          <span class="badge sale">خصم ٢٠٪</span>
+          <img src="https://placehold.co/500x500/d4a0b0/ffffff?text=Women+05" alt="حذاء نسائي عصري">
+          <button class="add-to-cart-bar" onclick="addToCart('نسائي عصري', '١٠٠٠ ج.م', this)">+ أضف للسلة</button>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">نسائي عصري</div>
+          <div class="pcard-meta">
+            <div class="color-dots">
+              <div class="color-dot" style="background:#d4a0b0"></div>
+              <div class="color-dot" style="background:#1a1a1a"></div>
+              <div class="color-dot" style="background:#fff;border:1px solid #ccc"></div>
+            </div>
+            <span class="pcard-colors">٤ ألوان</span>
+          </div>
+          <div>
+            <span class="pcard-price-old">1,250</span>
+            <span class="pcard-price">1,000 ج.م</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="pcard reveal" data-category="sport">
+        <div class="pcard-img-wrap">
+          <span class="badge">جديد</span>
+          <img src="https://placehold.co/500x500/333333/ffffff?text=Sport+06" alt="حذاء رياضي برو">
+          <button class="add-to-cart-bar" onclick="addToCart('رياضي برو', '١٦٥٠ ج.م', this)">+ أضف للسلة</button>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">رياضي برو</div>
+          <div class="pcard-meta">
+            <div class="color-dots">
+              <div class="color-dot" style="background:#333"></div>
+              <div class="color-dot" style="background:#e05a5a"></div>
+            </div>
+            <span class="pcard-colors">٢ ألوان</span>
+          </div>
+          <div class="pcard-price">1,650 ج.م</div>
+        </div>
+      </div>
+
+      <div class="pcard reveal" data-category="casual">
+        <div class="pcard-img-wrap">
+          <img src="https://placehold.co/500x500/c8b89a/333333?text=Casual+07" alt="حذاء كاجوال بيج">
+          <button class="add-to-cart-bar" onclick="addToCart('كاجوال بيج', '٨٥٠ ج.م', this)">+ أضف للسلة</button>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">كاجوال بيج</div>
+          <div class="pcard-meta">
+            <div class="color-dots">
+              <div class="color-dot" style="background:#c8b89a"></div>
+              <div class="color-dot" style="background:#8a7a6a"></div>
+            </div>
+            <span class="pcard-colors">٢ ألوان</span>
+          </div>
+          <div class="pcard-price">850 ج.م</div>
+        </div>
+      </div>
+
+      <div class="pcard reveal" data-category="women">
+        <div class="pcard-img-wrap">
+          <span class="badge">الأكثر مبيعاً</span>
+          <img src="https://placehold.co/500x500/1a1a1a/ffffff?text=Women+08" alt="حذاء نسائي كلاسيك">
+          <button class="add-to-cart-bar" onclick="addToCart('نسائي كلاسيك', '١١٥٠ ج.م', this)">+ أضف للسلة</button>
+        </div>
+        <div class="pcard-info">
+          <div class="pcard-name">نسائي كلاسيك</div>
+          <div class="pcard-meta">
+            <div class="color-dots">
+              <div class="color-dot" style="background:#1a1a1a"></div>
+              <div class="color-dot" style="background:#fff;border:1px solid #ccc"></div>
+              <div class="color-dot" style="background:#8a7a6a"></div>
+            </div>
+            <span class="pcard-colors">٣ ألوان</span>
+          </div>
+          <div class="pcard-price">1,150 ج.م</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- OFFER BAND -->
+  <section id="offer-band" class="reveal">
+    <div class="offer-text">
+      <h2>عروض نهاية الموسم<br>خصم حتى ٥٠٪</h2>
+      <p>أسعار لا تتكرر — على أحذية رياضية، كاجوال، ورسمية</p>
+    </div>
+    <div class="timer">
+      <div class="tbox">
+        <div class="tnum" id="td">03</div>
+        <div class="tlbl">يوم</div>
+      </div>
+      <div class="tsep">:</div>
+      <div class="tbox">
+        <div class="tnum" id="th">14</div>
+        <div class="tlbl">ساعة</div>
+      </div>
+      <div class="tsep">:</div>
+      <div class="tbox">
+        <div class="tnum" id="tm">22</div>
+        <div class="tlbl">دقيقة</div>
+      </div>
+      <div class="tsep">:</div>
+      <div class="tbox">
+        <div class="tnum" id="ts">00</div>
+        <div class="tlbl">ثانية</div>
       </div>
     </div>
+    <a href="#products" class="btn-black" style="background:#fff;color:#0A0A0A;border-color:#fff;">تسوق الآن</a>
+  </section>
 
-    <div class="pcard reveal" data-category="women">
-      <div class="pcard-img-wrap">
-        <span class="badge sale">خصم ٢٠٪</span>
-        <img src="https://placehold.co/500x500/d4a0b0/ffffff?text=Women+05" alt="حذاء نسائي عصري">
-        <button class="add-to-cart-bar" onclick="addToCart('نسائي عصري', '١٠٠٠ ج.م', this)">+ أضف للسلة</button>
-      </div>
-      <div class="pcard-info">
-        <div class="pcard-name">نسائي عصري</div>
-        <div class="pcard-meta">
-          <div class="color-dots">
-            <div class="color-dot" style="background:#d4a0b0"></div>
-            <div class="color-dot" style="background:#1a1a1a"></div>
-            <div class="color-dot" style="background:#fff;border:1px solid #ccc"></div>
-          </div>
-          <span class="pcard-colors">٤ ألوان</span>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-text reveal">
+      <p class="section-eyebrow">قصتنا</p>
+      <h2>مش بس حذاء —<br>ده أسلوب حياة</h2>
+      <p>من القاهرة للعالم، بنقدم أحذية بجودة استثنائية تناسب كل لحظة في حياتك. سواء كنت في الجيم، في الشغل، أو مع
+        العيلة — عندنا الحذاء المناسب ليك.</p>
+      <p>كل تفصيلة في أحذيتنا مدروسة بعناية، من الخامة للنعل للتصميم. شغلنا منذ ١٠ سنين وبنخدم أكثر من ١٢٠ ألف عميل في
+        مصر والخليج.</p>
+      <div class="about-stats">
+        <div>
+          <div class="astat-num">٥٠٠+</div>
+          <div class="astat-lbl">منتج متنوع</div>
         </div>
         <div>
-          <span class="pcard-price-old">1,250</span>
-          <span class="pcard-price">1,000 ج.م</span>
+          <div class="astat-num">١٢٠,٠٠٠</div>
+          <div class="astat-lbl">عميل سعيد</div>
+        </div>
+        <div>
+          <div class="astat-num">١٠ سنين</div>
+          <div class="astat-lbl">خبرة في السوق</div>
         </div>
       </div>
     </div>
+    <div class="about-img-panel">
+      <img src="https://placehold.co/500x600/EFEFED/333333?text=Our+Story" alt="قصة البراند">
+    </div>
+  </section>
 
-    <div class="pcard reveal" data-category="sport">
-      <div class="pcard-img-wrap">
-        <span class="badge">جديد</span>
-        <img src="https://placehold.co/500x500/333333/ffffff?text=Sport+06" alt="حذاء رياضي برو">
-        <button class="add-to-cart-bar" onclick="addToCart('رياضي برو', '١٦٥٠ ج.م', this)">+ أضف للسلة</button>
+  <!-- TESTIMONIALS -->
+  <section id="testimonials">
+    <div class="reveal">
+      <p class="section-eyebrow">آراء العملاء</p>
+      <div class="reviews-meta">
+        <div class="rating-big">٤٫٩</div>
+        <div>
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-count">من أكثر من ٨,٤٠٠ تقييم</div>
+        </div>
       </div>
-      <div class="pcard-info">
-        <div class="pcard-name">رياضي برو</div>
-        <div class="pcard-meta">
-          <div class="color-dots">
-            <div class="color-dot" style="background:#333"></div>
-            <div class="color-dot" style="background:#e05a5a"></div>
+    </div>
+    <div class="reviews-track-wrap">
+      <div class="reviews-track" id="reviews-track">
+
+        <div class="rcard">
+          <div class="rcard-stars">★★★★★</div>
+          <div class="rcard-text">جودة خرافية والراحة دي مش طبيعية! اشتريت منهم ٣ مرات ومش هوقف. أفضل حذاء اشتريته في
+            حياتي بجد.</div>
+          <div class="rcard-author">
+            <div class="rcard-avatar">م أ</div>
+            <div>
+              <div class="rcard-name">محمد أحمد</div>
+              <div class="rcard-city">القاهرة</div>
+            </div>
           </div>
-          <span class="pcard-colors">٢ ألوان</span>
         </div>
-        <div class="pcard-price">1,650 ج.م</div>
-      </div>
-    </div>
 
-    <div class="pcard reveal" data-category="casual">
-      <div class="pcard-img-wrap">
-        <img src="https://placehold.co/500x500/c8b89a/333333?text=Casual+07" alt="حذاء كاجوال بيج">
-        <button class="add-to-cart-bar" onclick="addToCart('كاجوال بيج', '٨٥٠ ج.م', this)">+ أضف للسلة</button>
-      </div>
-      <div class="pcard-info">
-        <div class="pcard-name">كاجوال بيج</div>
-        <div class="pcard-meta">
-          <div class="color-dots">
-            <div class="color-dot" style="background:#c8b89a"></div>
-            <div class="color-dot" style="background:#8a7a6a"></div>
+        <div class="rcard">
+          <div class="rcard-stars">★★★★★</div>
+          <div class="rcard-text">التوصيل جه في يومين تمام والحذاء أحسن مما توقعت بكتير. التصميم أنيق والخامة ممتازة.
+            بشكرهم جداً.</div>
+          <div class="rcard-author">
+            <div class="rcard-avatar">س خ</div>
+            <div>
+              <div class="rcard-name">سارة خالد</div>
+              <div class="rcard-city">الرياض</div>
+            </div>
           </div>
-          <span class="pcard-colors">٢ ألوان</span>
         </div>
-        <div class="pcard-price">850 ج.م</div>
-      </div>
-    </div>
 
-    <div class="pcard reveal" data-category="women">
-      <div class="pcard-img-wrap">
-        <span class="badge">الأكثر مبيعاً</span>
-        <img src="https://placehold.co/500x500/1a1a1a/ffffff?text=Women+08" alt="حذاء نسائي كلاسيك">
-        <button class="add-to-cart-bar" onclick="addToCart('نسائي كلاسيك', '١١٥٠ ج.م', this)">+ أضف للسلة</button>
-      </div>
-      <div class="pcard-info">
-        <div class="pcard-name">نسائي كلاسيك</div>
-        <div class="pcard-meta">
-          <div class="color-dots">
-            <div class="color-dot" style="background:#1a1a1a"></div>
-            <div class="color-dot" style="background:#fff;border:1px solid #ccc"></div>
-            <div class="color-dot" style="background:#8a7a6a"></div>
+        <div class="rcard">
+          <div class="rcard-stars">★★★★★</div>
+          <div class="rcard-text">اشتريت للأطفال وبيلبسوه كل يوم. متين ومريح وتمنه كويس جداً مقارنة بالجودة. بنصح بيه
+            لكل الأهل.</div>
+          <div class="rcard-author">
+            <div class="rcard-avatar">ع ح</div>
+            <div>
+              <div class="rcard-name">علي حسن</div>
+              <div class="rcard-city">الإسكندرية</div>
+            </div>
           </div>
-          <span class="pcard-colors">٣ ألوان</span>
         </div>
-        <div class="pcard-price">1,150 ج.م</div>
+
+        <div class="rcard">
+          <div class="rcard-stars">★★★★★</div>
+          <div class="rcard-text">من أحسن المتاجر اللي تعاملت معاها. الخدمة ممتازة والحذاء وصل بحالة مثالية. هطلب تاني
+            بالتأكيد.</div>
+          <div class="rcard-author">
+            <div class="rcard-avatar">ن م</div>
+            <div>
+              <div class="rcard-name">نور محمد</div>
+              <div class="rcard-city">دبي</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-stars">★★★★★</div>
+          <div class="rcard-text">الحذاء الرياضي ده غير حياتي! بلبسه كل يوم في الجيم وبعدينه. مريح جداً وشكله حلو في نفس
+            الوقت.</div>
+          <div class="rcard-author">
+            <div class="rcard-avatar">ك ي</div>
+            <div>
+              <div class="rcard-name">كريم يوسف</div>
+              <div class="rcard-city">الكويت</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rcard">
+          <div class="rcard-stars">★★★★★</div>
+          <div class="rcard-text">أخيراً لقيت متجر عربي بجودة عالمية. الأسعار معقولة والجودة ممتازة. شكراً BRAND على
+            التجربة الرائعة.</div>
+          <div class="rcard-author">
+            <div class="rcard-avatar">ل ف</div>
+            <div>
+              <div class="rcard-name">لمياء فاروق</div>
+              <div class="rcard-city">القاهرة</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="reviews-nav">
+        <button class="rev-btn" id="rev-prev">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </button>
+        <button class="rev-btn" id="rev-next">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="15 18 9 12 15 6" />
+          </svg>
+        </button>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- OFFER BAND -->
-<section id="offer-band" class="reveal">
-  <div class="offer-text">
-    <h2>عروض نهاية الموسم<br>خصم حتى ٥٠٪</h2>
-    <p>أسعار لا تتكرر — على أحذية رياضية، كاجوال، ورسمية</p>
-  </div>
-  <div class="timer">
-    <div class="tbox"><div class="tnum" id="td">03</div><div class="tlbl">يوم</div></div>
-    <div class="tsep">:</div>
-    <div class="tbox"><div class="tnum" id="th">14</div><div class="tlbl">ساعة</div></div>
-    <div class="tsep">:</div>
-    <div class="tbox"><div class="tnum" id="tm">22</div><div class="tlbl">دقيقة</div></div>
-    <div class="tsep">:</div>
-    <div class="tbox"><div class="tnum" id="ts">00</div><div class="tlbl">ثانية</div></div>
-  </div>
-  <a href="#products" class="btn-black" style="background:#fff;color:#0A0A0A;border-color:#fff;">تسوق الآن</a>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-  <div class="about-text reveal">
-    <p class="section-eyebrow">قصتنا</p>
-    <h2>مش بس حذاء —<br>ده أسلوب حياة</h2>
-    <p>من القاهرة للعالم، بنقدم أحذية بجودة استثنائية تناسب كل لحظة في حياتك. سواء كنت في الجيم، في الشغل، أو مع العيلة — عندنا الحذاء المناسب ليك.</p>
-    <p>كل تفصيلة في أحذيتنا مدروسة بعناية، من الخامة للنعل للتصميم. شغلنا منذ ١٠ سنين وبنخدم أكثر من ١٢٠ ألف عميل في مصر والخليج.</p>
-    <div class="about-stats">
-      <div>
-        <div class="astat-num">٥٠٠+</div>
-        <div class="astat-lbl">منتج متنوع</div>
-      </div>
-      <div>
-        <div class="astat-num">١٢٠,٠٠٠</div>
-        <div class="astat-lbl">عميل سعيد</div>
-      </div>
-      <div>
-        <div class="astat-num">١٠ سنين</div>
-        <div class="astat-lbl">خبرة في السوق</div>
-      </div>
-    </div>
-  </div>
-  <div class="about-img-panel">
-    <img src="https://placehold.co/500x600/EFEFED/333333?text=Our+Story" alt="قصة البراند">
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="reveal">
-    <p class="section-eyebrow">آراء العملاء</p>
-    <div class="reviews-meta">
-      <div class="rating-big">٤٫٩</div>
-      <div>
-        <div class="rating-stars">★★★★★</div>
-        <div class="rating-count">من أكثر من ٨,٤٠٠ تقييم</div>
-      </div>
-    </div>
-  </div>
-  <div class="reviews-track-wrap">
-    <div class="reviews-track" id="reviews-track">
-
-      <div class="rcard">
-        <div class="rcard-stars">★★★★★</div>
-        <div class="rcard-text">جودة خرافية والراحة دي مش طبيعية! اشتريت منهم ٣ مرات ومش هوقف. أفضل حذاء اشتريته في حياتي بجد.</div>
-        <div class="rcard-author">
-          <div class="rcard-avatar">م أ</div>
-          <div><div class="rcard-name">محمد أحمد</div><div class="rcard-city">القاهرة</div></div>
-        </div>
-      </div>
-
-      <div class="rcard">
-        <div class="rcard-stars">★★★★★</div>
-        <div class="rcard-text">التوصيل جه في يومين تمام والحذاء أحسن مما توقعت بكتير. التصميم أنيق والخامة ممتازة. بشكرهم جداً.</div>
-        <div class="rcard-author">
-          <div class="rcard-avatar">س خ</div>
-          <div><div class="rcard-name">سارة خالد</div><div class="rcard-city">الرياض</div></div>
-        </div>
-      </div>
-
-      <div class="rcard">
-        <div class="rcard-stars">★★★★★</div>
-        <div class="rcard-text">اشتريت للأطفال وبيلبسوه كل يوم. متين ومريح وتمنه كويس جداً مقارنة بالجودة. بنصح بيه لكل الأهل.</div>
-        <div class="rcard-author">
-          <div class="rcard-avatar">ع ح</div>
-          <div><div class="rcard-name">علي حسن</div><div class="rcard-city">الإسكندرية</div></div>
-        </div>
-      </div>
-
-      <div class="rcard">
-        <div class="rcard-stars">★★★★★</div>
-        <div class="rcard-text">من أحسن المتاجر اللي تعاملت معاها. الخدمة ممتازة والحذاء وصل بحالة مثالية. هطلب تاني بالتأكيد.</div>
-        <div class="rcard-author">
-          <div class="rcard-avatar">ن م</div>
-          <div><div class="rcard-name">نور محمد</div><div class="rcard-city">دبي</div></div>
-        </div>
-      </div>
-
-      <div class="rcard">
-        <div class="rcard-stars">★★★★★</div>
-        <div class="rcard-text">الحذاء الرياضي ده غير حياتي! بلبسه كل يوم في الجيم وبعدينه. مريح جداً وشكله حلو في نفس الوقت.</div>
-        <div class="rcard-author">
-          <div class="rcard-avatar">ك ي</div>
-          <div><div class="rcard-name">كريم يوسف</div><div class="rcard-city">الكويت</div></div>
-        </div>
-      </div>
-
-      <div class="rcard">
-        <div class="rcard-stars">★★★★★</div>
-        <div class="rcard-text">أخيراً لقيت متجر عربي بجودة عالمية. الأسعار معقولة والجودة ممتازة. شكراً BRAND على التجربة الرائعة.</div>
-        <div class="rcard-author">
-          <div class="rcard-avatar">ل ف</div>
-          <div><div class="rcard-name">لمياء فاروق</div><div class="rcard-city">القاهرة</div></div>
-        </div>
-      </div>
-
-    </div>
-    <div class="reviews-nav">
-      <button class="rev-btn" id="rev-prev">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-      <button class="rev-btn" id="rev-next">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section id="newsletter">
-  <div>
-    <h2>اشترك واحصل على خصم ١٠٪</h2>
-    <p>على أول طلب — عروض حصرية وأحدث الكولكشنات مباشرة لبريدك</p>
-  </div>
-  <div class="newsletter-form">
-    <input class="newsletter-input" type="email" placeholder="بريدك الإلكتروني">
-    <button class="newsletter-btn" onclick="alert('شكراً! خصمك في طريقه إليك 🎉')">اشترك الآن</button>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
+  <!-- NEWSLETTER -->
+  <section id="newsletter">
     <div>
-      <span class="footer-logo">BRAND</span>
-      <p class="footer-tagline">أحذية لكل خطوة في حياتك.<br>جودة استثنائية، تصميم عصري، راحة لا مثيل لها.</p>
-      <div class="footer-socials">
-        <div class="social-link" title="انستاجرام">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      <h2>اشترك واحصل على خصم ١٠٪</h2>
+      <p>على أول طلب — عروض حصرية وأحدث الكولكشنات مباشرة لبريدك</p>
+    </div>
+    <div class="newsletter-form">
+      <input class="newsletter-input" type="email" placeholder="بريدك الإلكتروني">
+      <button class="newsletter-btn" onclick="alert('شكراً! خصمك في طريقه إليك 🎉')">اشترك الآن</button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <span class="footer-logo">BRAND</span>
+        <p class="footer-tagline">أحذية لكل خطوة في حياتك.<br>جودة استثنائية، تصميم عصري، راحة لا مثيل لها.</p>
+        <div class="footer-socials">
+          <div class="social-link" title="انستاجرام">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </div>
+          <div class="social-link" title="تيك توك">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12a4 4 0 104 4V4a5 5 0 005 5" />
+            </svg>
+          </div>
+          <div class="social-link" title="واتساب">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path
+                d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+            </svg>
+          </div>
         </div>
-        <div class="social-link" title="تيك توك">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
-        </div>
-        <div class="social-link" title="واتساب">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+      </div>
+      <div>
+        <p class="footer-col-title">روابط</p>
+        <a class="footer-link" href="#hero">الرئيسية</a>
+        <a class="footer-link" href="#products">المنتجات</a>
+        <a class="footer-link" href="#offer-band">العروض</a>
+        <a class="footer-link" href="#about">عن البراند</a>
+        <a class="footer-link" href="#testimonials">آراء العملاء</a>
+      </div>
+      <div>
+        <p class="footer-col-title">خدمة العملاء</p>
+        <a class="footer-link" href="#">الإرجاع والاستبدال</a>
+        <a class="footer-link" href="#">جدول المقاسات</a>
+        <a class="footer-link" href="#">تتبع طلبك</a>
+        <a class="footer-link" href="#">الأسئلة الشائعة</a>
+        <a class="footer-link" href="#">تواصل معنا</a>
+      </div>
+      <div>
+        <p class="footer-col-title">النشرة البريدية</p>
+        <p style="font-size:12.5px;color:#555;margin-bottom:16px;line-height:1.6">اشترك للحصول على أحدث العروض وكولكشنات
+          قبل الجميع</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <input class="newsletter-input" type="email" placeholder="بريدك الإلكتروني" style="width:100%">
+          <button class="newsletter-btn" style="width:100%" onclick="alert('تم الاشتراك! 🎉')">اشترك</button>
         </div>
       </div>
     </div>
-    <div>
-      <p class="footer-col-title">روابط</p>
-      <a class="footer-link" href="#hero">الرئيسية</a>
-      <a class="footer-link" href="#products">المنتجات</a>
-      <a class="footer-link" href="#offer-band">العروض</a>
-      <a class="footer-link" href="#about">عن البراند</a>
-      <a class="footer-link" href="#testimonials">آراء العملاء</a>
-    </div>
-    <div>
-      <p class="footer-col-title">خدمة العملاء</p>
-      <a class="footer-link" href="#">الإرجاع والاستبدال</a>
-      <a class="footer-link" href="#">جدول المقاسات</a>
-      <a class="footer-link" href="#">تتبع طلبك</a>
-      <a class="footer-link" href="#">الأسئلة الشائعة</a>
-      <a class="footer-link" href="#">تواصل معنا</a>
-    </div>
-    <div>
-      <p class="footer-col-title">النشرة البريدية</p>
-      <p style="font-size:12.5px;color:#555;margin-bottom:16px;line-height:1.6">اشترك للحصول على أحدث العروض وكولكشنات قبل الجميع</p>
-      <div style="display:flex;flex-direction:column;gap:8px">
-        <input class="newsletter-input" type="email" placeholder="بريدك الإلكتروني" style="width:100%">
-        <button class="newsletter-btn" style="width:100%" onclick="alert('تم الاشتراك! 🎉')">اشترك</button>
+    <div class="footer-bottom">
+      <span class="footer-copy">جميع الحقوق محفوظة © ٢٠٢٥ BRAND</span>
+      <div class="footer-legal">
+        <a href="#">سياسة الخصوصية</a>
+        <a href="#">الشروط والأحكام</a>
+        <a href="#">ملفات تعريف الارتباط</a>
       </div>
     </div>
-  </div>
-  <div class="footer-bottom">
-    <span class="footer-copy">جميع الحقوق محفوظة © ٢٠٢٥ BRAND</span>
-    <div class="footer-legal">
-      <a href="#">سياسة الخصوصية</a>
-      <a href="#">الشروط والأحكام</a>
-      <a href="#">ملفات تعريف الارتباط</a>
+  </footer>
+
+  <!-- CART OVERLAY & SIDEBAR -->
+  <div id="cart-overlay" onclick="closeCart()"></div>
+  <div id="cart-sidebar">
+    <div class="cart-header">
+      <h3>سلة التسوق</h3>
+      <button class="cart-close" onclick="closeCart()">×</button>
+    </div>
+    <div class="cart-body" id="cart-body">
+      <div class="cart-empty" id="cart-empty">سلتك فاضية —<br>ابدأ التسوق الآن 🛍</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>الإجمالي</span>
+        <span id="cart-total">0 ج.م</span>
+      </div>
+      <button class="checkout-btn" onclick="alert('قريباً — صفحة الدفع!')">إتمام الشراء ←</button>
     </div>
   </div>
-</footer>
 
-<!-- CART OVERLAY & SIDEBAR -->
-<div id="cart-overlay" onclick="closeCart()"></div>
-<div id="cart-sidebar">
-  <div class="cart-header">
-    <h3>سلة التسوق</h3>
-    <button class="cart-close" onclick="closeCart()">×</button>
-  </div>
-  <div class="cart-body" id="cart-body">
-    <div class="cart-empty" id="cart-empty">سلتك فاضية —<br>ابدأ التسوق الآن 🛍</div>
-  </div>
-  <div class="cart-footer">
-    <div class="cart-total">
-      <span>الإجمالي</span>
-      <span id="cart-total">0 ج.م</span>
-    </div>
-    <button class="checkout-btn" onclick="alert('قريباً — صفحة الدفع!')">إتمام الشراء ←</button>
-  </div>
-</div>
-
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
+
 </html>

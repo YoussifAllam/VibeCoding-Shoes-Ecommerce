@@ -412,91 +412,62 @@
   
   
   /* ══════════════════════════════════════════
-     CATEGORIES — Allbirds reference exact
+     CATEGORIES
   ══════════════════════════════════════════ */
   #categories {
-    background: #EEECEA;
-    padding: 72px 0 80px;
-    overflow: visible;
-  }
-
-  .cats-header {
-    text-align: center;
-    margin-bottom: 52px;
-    padding: 0 24px;
-  }
-
-  /* Full-width grid, no padding */
-  .cats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    padding: 0 10px;
     width: 100%;
-    /* extra top space so shoes overflowing upward are visible */
-    padding-top: 60px;
-    margin-top: -60px;
-    overflow: visible;
+    margin: 0;
+    padding: 0;
   }
 
-  /* Each card */
+  .cats-grid {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+  }
+
   .cat-card {
+    flex: 1;
     cursor: pointer;
     position: relative;
-    overflow: visible; /* let shoe overflow outside the card */
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: flex 0.4s ease;
   }
 
-  /* The coloured rectangle — shoes overflow from here */
-  .cat-bg {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 3 / 3.8;
-    border-radius: 20px;
-    overflow: visible; /* background clips via pseudo */
-    will-change: border-radius;
-    transition:
-      border-radius .65s cubic-bezier(.4,0,.2,1),
-      transform     .4s  cubic-bezier(.4,0,.2,1),
-      box-shadow    .4s  ease;
-  }
-
-  /* Coloured background via ::before so we can clip it independently */
-  .cat-bg::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    transition: border-radius .65s cubic-bezier(.4,0,.2,1);
-    z-index: 0;
+  .cat-card:hover {
+    flex: 1.1; /* slight expansion effect on hover */
   }
 
   /* Card colours */
-  .cat-card:nth-child(1) .cat-bg::before { background: #7B9BB5; }
-  .cat-card:nth-child(2) .cat-bg::before { background: #5C4A42; }
-  .cat-card:nth-child(3) .cat-bg::before { background: #B8877A; }
-  .cat-card:nth-child(4) .cat-bg::before { background: #7A8C6E; }
+  .cat-card:nth-child(1) { background: #7B9BB5; }
+  .cat-card:nth-child(2) { background: #5C4A42; }
+  .cat-card:nth-child(3) { background: #B8877A; }
+  .cat-card:nth-child(4) { background: #7A8C6E; }
 
-  /* Shoe image — positioned to overflow top of card */
+  /* Shoe image */
   .cat-img {
-    position: absolute;
-    width: 135%;
-    left: 50%;
-    transform: translateX(-50%);
-    /* sit so bottom of shoe is ~55% down the card */
-    bottom: 38%;
+    max-height: 60%;
+    max-width: 90%;
+    object-fit: contain;
     z-index: 2;
-    pointer-events: none;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
     filter: drop-shadow(0 20px 32px rgba(0,0,0,.22));
   }
   .cat-card:hover .cat-img {
-    transform: translateX(-50%) translateY(-8px) scale(1.04);
+    transform: translateY(-8px) scale(1.04);
   }
 
-  /* Pill label — centred in the coloured rectangle */
+  /* Pill label */
   .cat-overlay {
     position: absolute;
-    inset: 0;
+    bottom: 40px;
+    left: 0;
+    right: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -507,42 +478,34 @@
   .cat-label-pill {
     background: rgba(255,255,255,.18);
     color: #fff;
-    font-size: 12.5px;
+    font-size: 13px;
     font-weight: 700;
-    padding: 8px 20px;
+    padding: 10px 24px;
     border-radius: 999px;
     white-space: nowrap;
-    font-family: 'Cairo', sans-serif;
+    font-family: var(--font-ar);
     border: 1.5px solid rgba(255,255,255,.45);
     backdrop-filter: blur(6px);
     letter-spacing: .3px;
-    transition: background .3s, border-color .3s;
+    transition: background 0.3s, border-color 0.3s;
   }
   .cat-card:hover .cat-label-pill {
     background: rgba(255,255,255,.28);
     border-color: rgba(255,255,255,.7);
   }
 
-  /* Hover: rectangle → oval */
-  .cat-card:hover .cat-bg {
-    border-radius: 999px;
-    transform: translateY(-6px);
-    box-shadow: 0 28px 56px rgba(0,0,0,.13);
-  }
-
   /* Responsive */
   @media (max-width: 900px) {
-    .cats-grid { grid-template-columns: repeat(2,1fr); gap: 8px; padding: 60px 8px 0; }
-    #categories { padding: 48px 0 60px; }
+    .cats-grid { 
+      flex-direction: column;
+      height: auto;
+    }
+    .cat-card {
+      width: 100%;
+      height: 35vh;
+      min-height: 250px;
+    }
   }
-  @media (max-width: 480px) {
-    .cats-grid { grid-template-columns: repeat(2,1fr); gap: 6px; padding: 50px 6px 0; }
-    .cat-img { width: 120%; }
-  }
-
-  
-
-
 
   /* ── PRODUCTS ── */
   #products { padding: 80px 0; }
